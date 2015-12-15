@@ -1,0 +1,37 @@
+[
+    {
+        "op": "add",
+        "path": "/properties/additionalBuyers",
+        "value": { 
+            "title": "Additional Buyers",
+            "tedMapping":"ADDRESS_CONTRACTING_BODY_ADDITIONAL",
+            "description": "For recording the additional buyers or contracting bodies in cases of joint procurement.",
+            "type": ["array"],
+            "items": {
+                "$ref": "#/definitions/Organization" 
+            }
+        }
+    },
+    {
+        "op": "add",
+        "path": "/definitions/Tender/properties/furtherInfoAddress",
+        "value": { 
+            "tedMapping":"ADDRESS_FURTHER_INFO",
+            "title": "Address for further information",
+            "description": "Further information can be obtained from this organisation and contact point. If no value is given, then the buyer address information and contact point can be used.",
+            "type": ["object","null"],
+            "$ref": "#/definitions/Organization"
+        }
+    },
+    {
+        "op": "add",
+        "path": "/definitions/Tender/properties/submissionAddress",
+        "value": { 
+            "title": "Tender submission address",
+            "tedMapping":"ADDRESS_PARTICIPATION",
+            "description": "The address for submission of bids. If no value is given, then the further information address can be used. This information should also be presented in free text in submissionMethodDetails.",
+            "type": ["object","null"],
+            "$ref": "#/definitions/Organization"
+        }
+    }
+]

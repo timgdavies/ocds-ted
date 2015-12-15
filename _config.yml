@@ -1,0 +1,12 @@
+# Site settings
+title: OCDS TED Mapping
+email: data@open-contracting.org
+description: > # this means to ignore newlines until "baseurl:"
+    Mapping between the Open Contracting Data Standard and Tenders Electronic Daily (TED)
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://standard.open-contracting.org" # the base hostname & protocol for your site
+twitter_username: ocdata
+github_username:  open-contracting
+
+# Build settings
+markdown: kramdown
