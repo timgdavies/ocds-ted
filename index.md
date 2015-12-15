@@ -16,7 +16,7 @@ The OCDS data model focusses on bringing together information from each stage of
 
 [Tenders Electronic Daily](http://ted.europa.eu/) is the public procurement journal of the European Union. It contains information on business opportunities from the European Union, the European Economic Area and beyond. European public bodies are obliged to publish tender and award notices over a certain threshold with TED, ideally through sending XML notices via the [eSender framework](http://simap.ted.europa.eu/web/simap/sending-electronic-notices). Data from TED is exported in a similar XML format. 
 
-The [TED Schema](/ted/) are focussed on providing digital representation of legally mandated procurement forms. 
+The [TED Schema](ted/) are focussed on providing digital representation of legally mandated procurement forms. 
 
 ## Mapping: use cases
 
