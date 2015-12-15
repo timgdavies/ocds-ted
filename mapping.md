@@ -117,7 +117,7 @@ This broadly maps to the OCDS ```items``` object, with the exception of VAL\_EST
 In addition, delivery location information, classified using NUTS may be required at the OBJECT\_CONTRACT level. The location extension could be used to capture this. 
 
 
-## 
+## Review information
 
 * **ADDRESS\_REVIEW_BODY**
   * Simpler address type ```contact_review```
