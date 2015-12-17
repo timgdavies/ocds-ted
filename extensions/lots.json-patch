@@ -1,0 +1,102 @@
+[    {
+        "op": "add",
+        "path": "/definitions/Tender/properties/lots",
+        "value": { 
+            "title": "Lots",
+            "tedMapping":"LOTS",
+            "description": "In some systems, a tender process may be divided into lots, where bidders can bid on one or more lots. Details of each lot can be provided here. Items, documents and other features can then reference their relatedLot.",
+            "type": ["object", "null"],
+            "properties": {
+                "id": {
+                    "title":"id",
+                    "description": "A local identifier to reference this lot. Used in relatedLot references.",
+                    "type": ["string", "integer"]
+                },
+                "title": {
+                    "title":"Title",
+                    "description":"A title for this lot",
+                    "type":["string","null"]
+                },
+                "description": {
+                    "title":"Description",
+                    "description":"A description of this lot",
+                    "type":["string","null"]
+                
+                },
+                "status":{
+                    "title": "Lot Status",
+                    "description": "The current status of tendering related to this lot based on the [tenderStatus codelist](http://ocds.open-contracting.org/standard/r/1__0__0/en/schema/codelists#tender-status)",
+                    "type": ["string", "null"],
+                    "enum": ["planned", "active", "cancelled", "unsuccessful", "complete", null]
+                },
+                "value":{
+                    "title":"Lot value",
+                    "description": "The maximum estimated value of this lot.",
+                    "$ref": "#/definitions/Value"
+                }
+            }
+        }
+    },
+    {
+        "op": "add",
+        "path": "/definitions/Item/properties/relatedLot",
+        "value": {
+            "title":"Related Lot",
+            "description":"If this item belongs to a lot, provide the identifier(s) of the related lot(s) here.",
+            "type":["array","null"],
+            "items": {
+              "type":["string","integer"]
+            }
+        }      
+    },
+    {
+        "op": "add",
+        "path": "/definitions/Document/properties/relatedLot",
+        "value": {
+            "title":"Related Lot",
+            "description":"If this document relates to a particular lot, provide the identifier(s) of the related lot(s) here.",
+            "type":["array","null"],
+            "items": {
+              "type":["string","integer"]
+            }
+        }      
+    },
+    {
+        "op": "add",
+        "path": "/definitions/Milestone/properties/relatedLot",
+        "value": {
+            "title":"Related Lot",
+            "description":"If this milestone relates to a particular lot, provide the identifier(s) of the related lot(s) here.",
+            "type":["array","null"],
+            "items": {
+              "type":["string","integer"]
+            }
+        }      
+    },
+    {
+            "op": "add",
+            "path": "/definitions/Tender/properties/lotDetails",
+            "value":{
+              "type":["object","null"],
+              "title":"Lot Details",
+              "description":"If this tender is divided into lots, details can be provided here of any criteria that apply to bidding on these lots. This extended property is currently focussed on fields required by the EU TED data standard",
+              "properties":{
+                 "maximumLotsBidPerSupplier": {
+                     "type":["integer","null"],
+                     "title":"Maximum lots per supplier",
+                     "description":"The maximum number of lots that one supplier may bid for as part of this contracting process."
+                 },
+                 "maximumLotsAwardedPerSupplier": {
+                     "type":["integer","null"],
+                     "title":"Maximum lots per supplier",
+                     "description":"The maximum number of lots that may be awarded to one supplier as part of this contracting process."
+                 },
+                 "combiningContractRight": {
+                    "type":["string","null"],
+                    "title":"Combining Contract Right",
+                    "description":"The contracting authority reserves the right to award concessions combining lots and groups of lots as described in this field."
+                 }
+              }
+            }
+    }
+]

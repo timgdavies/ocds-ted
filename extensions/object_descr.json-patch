@@ -1,0 +1,25 @@
+[    {
+        "op": "add",
+        "path": "/definitions/Item/title",
+        "value":{
+            "description": "Item title",
+            "type": ["string", "null"]
+        }
+     },
+     {
+         "op": "add",
+         "path": "/definitions/Item/additionalDetails",
+         "value":{
+             "description": "Item title",
+             "type": ["string", "null"]
+         }
+      },
+      {
+           "op": "add",
+           "path": "/definitions/Item/contractPeriod",
+           "value":{
+                "title":"Contract period for this item (anticipated)",
+                "$ref": "#/definitions/Period"           
+          }
+      }
+]

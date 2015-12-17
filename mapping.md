@@ -10,9 +10,9 @@ The TED XML best practices suggest [use comma as the decimal separator](https://
 
 However, XML examples suggest point is used, and so we assume no mapping is required here.
 
-```
+{% highlight xml %}
 <VAL_ESTIMATED_TOTAL CURRENCY="EUR">250000.00</VAL_ESTIMATED_TOTAL>
-```
+{% endhighlight %}
 
 ## Addresses
 
@@ -95,26 +95,48 @@ Forms 01 and 02 include URL\_PARTICIPATION and URL\_TOOL for details of electron
 
 The [extensions/submission.json-patch](submission.json-patch) adds these fields to ```tender```.
 
-## Contract Objects / Items
+## Contract Objects / Items (§II.1 AND §II.2)
 
-TED can have up to 100 OBJECT\_CONTRACT blocks containing:
+In TED, Prior Information Notices (Form 01) can have up to 100 §II OBJECT\_CONTRACT blocks, representing information such as total contract values. Tender and Award notices (Form 02 or 03) only repeat §II.2 (item descriptions / OBJECT_DESCR). 
 
-* TITLE
-* REFERENCE\_NUMBER
-* CPV\_MAIN
-* SHORT\_DESCR
-* LOT DIVISIONS
-* TYPE\_CONTRACT
-* VAL\_ESTIMATED\_TOTAL
-* DATE\_PUBLICATION\_NOTICE
+(Discussion in [Issue #279](https://github.com/open-contracting/standard/issues/279))
 
-This is [Section II in the case of Form 01](http://simap.ted.europa.eu/documents/10184/99173/EN_F01.pdf) all of which can be repeated.
+For this reason, we suggest creating a OCDS planning release for each repetition of §II OBJECT\_CONTRACT blocks in Form 01 - recognising that Form 01 represents a planning stage that may result in multiple unique contracting processes. The OBJECT\_CONTRACT/REFERENCE\_NUMBER field is a good candidate for constructing the OCID, as this should be repeated in the related Form 02 (Tender) for a given object of the planned procurement. 
 
-This broadly maps to the OCDS ```items``` object, with the exception of VAL\_ESTIMATED\_TOTAL and DATE\_PUBLICATION\_NOTICE which exist at the tender level in OCDS, LOT DIVISIONS which don't have native OCDS support at present, and TYPE\_CONTRACT which is a codelist with values for 'Works, Supplies or Services'
+For other forms, §II.1 information and §II.2 information should be captured in items. 
+
+In order to capture all the details that exist at the OBJECT\_DESCR level in TED the OCDS item needs to be extended to include information on:
+
+* Item titles
+* Additional information 
+* Anticipated duration (adding contractPeriod to items)
+* Information about potential contract extensions (See [issue #200](https://github.com/open-contracting/standard/issues/200))
+* Delivery locations (using [the location extension](https://github.com/open-contracting/implementation-and-extensions/tree/master/proposed_extensions/proposed_location) and coded using the NUTS gazetteer)
+* Lot numbers (using the [proposed lots extension](https://github.com/open-contracting/standard/issues/236))
+* Award criteria (using the features extension?)
+* Information about variants (ToDo)
+* Information about options (ToDo)
+* Information about European Union funds (using a boolean for ```relatedEUProjectOrFunding```) and ```projectID``` at the item level) (ToDo)
 
 
+The 'Estimated Value' of the object/item can be captured using the existing ```unit``` object of OCDS items. This should only be completed for §II.2
 
-In addition, delivery location information, classified using NUTS may be required at the OBJECT\_CONTRACT level. The location extension could be used to capture this. 
+In Form 01, the Estimated date of publication of contract notice (§II.3 / DATE\_PUBLICATION\_NOTICE) would map to ```tender.tenderPeriod.startDate```
+
+### A note on Mapping §II.1 estimated values
+
+TED includes §II.1 (Scope of procurement) and §II.2 (description of items).
+
+When a tender is divided into lots, then there can be multiple instances of §II.2 (description of items). When lots are not used, §II.2 will only occur once. 
+
+Both §II.1 and §II.2 include estimated values (§II.1.5 and §II.2.6), with the 'Estimated total value' in §II.1 assumed to be the total of all the values in §II.2.
+
+For this reason, the value from §II.1 should go in tender.value, not in the item value to avoid double counting. 
+
+
+## Legal, Economic, Financial and Technical Information (LEFTI)
+
+These may be possible to model using a modified version of the [Open Procurement Feature extension](http://api-docs.openprocurement.org/en/latest/standard/feature.html#feature).
 
 
 ## Review information

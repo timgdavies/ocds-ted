@@ -8,4 +8,4 @@ permalink: /schema/
 
 This viewer shows a version of the release schema with patches to incorporate key TED data. 
 
-<script src="/ocds-ted/docson/widget.js" data-schema="/ocds-ted/extensions/patched.json"></script>
+<script src="{{site.baseurl}}/docson/widget.js" data-schema="{{site.baseurl}}/extensions/patched.json"></script>

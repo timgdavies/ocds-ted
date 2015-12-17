@@ -25,7 +25,7 @@ These forms broadly map to [key OCDS release tags](http://ocds.open-contracting.
 
 | TED Form | OCDS Releases |
 |----------|---------------|
-| [01 - Prior Information Notice](http://simap.ted.europa.eu/documents/10184/99173/EN_F01.pdf) | planning |
+| [01 - Prior Information Notice](http://simap.ted.europa.eu/documents/10184/99173/EN_F01.pdf) | planning (one OCID per §II)|
 | [02 - Contract Notice](http://simap.ted.europa.eu/documents/10184/99173/EN_F02.pdf) | tender |
 | [03 - Contract Award Notice](http://simap.ted.europa.eu/documents/10184/99173/EN_F03.pdf) | award | 
 | [14 - Notice for Additional Information](http://simap.ted.europa.eu/documents/10184/99173/EN_F14.pdf) | tenderAmendment |
