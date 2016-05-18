@@ -10,7 +10,7 @@
          "op": "add",
          "path": "/definitions/Item/additionalDetails",
          "value":{
-             "description": "Item title",
+             "description": "Additional item details",
              "type": ["string", "null"]
          }
       },

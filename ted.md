@@ -12,7 +12,7 @@ We've collated a range of resources to help us understand the TED schema.
 
 * [Working spreadsheet of TED <-> OCDS mapping](https://docs.google.com/spreadsheets/d/13AMbfIhjg9j-7IsKWJ3-tdnVXWzHdqnARtHpzMownoU/edit).
 
-* The **[XML Schema Documentation](docs/)** (generated from TED_EXPORT.xsd) includes all known XML fields. 
+* The **[XML Schema Documentation](../docs/)** (generated from TED_EXPORT.xsd) includes all known XML fields. 
 
 * The [eSender Schema Documentation](https://webgate.ec.europa.eu/fpfis/wikis/display/TEDeSender/XML+Schema+2.0.9#XMLSchema2.0.9-3.3.FORM_SECTIONelement) outlines the structure of eSender XML files. 
 

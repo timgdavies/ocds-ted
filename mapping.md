@@ -30,7 +30,7 @@ TED has space for:
 
 For ADDRESS\_FURTHER\_INFO and ADDRESS_PARTICIPATION the XML can contain a boolean field called 'ADDRESS\_PARTICIPATION\_IDEM' (or similar) which indicates that the previously given address should be used for this. 
 
-The [extensions/addresses.json-patch](addresses.json-patch) proposes adding additional address entries to the top level of a release (for additional contracting bodies) and to tender (for further info and participation).
+The [../../schema/ted/addresses.json-patch](addresses.json-patch) proposes adding additional address entries to the top level of a release (for additional contracting bodies) and to tender (for further info and participation).
 
 ## Organisation Classifications
 
