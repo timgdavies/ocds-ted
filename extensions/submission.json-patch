@@ -1,0 +1,23 @@
+[    {
+        "op": "add",
+        "path": "/definitions/Tender/properties/submissionURL",
+        "value": { 
+            "title": "URL for electronic tender submission",
+            "tedMapping":"URL_PARTICIPATION",
+            "description": "The URL for electronic submission of bids. This information should also be presented in free text in submissionMethodDetails.",
+            "type": ["string", "null"],
+            "format": "uri"
+        }
+    },
+    {
+        "op": "add",
+        "path": "/definitions/Tender/properties/submissionTool",
+        "value": { 
+            "title": "Tools for electronic submission",
+            "tedMapping":"URL_TOOL",
+            "description": "Electronic communication requires the use of tools and devices . . ., free of charge, available from this URL.",
+            "type": ["string", "null"],
+            "format": "uri"
+        }
+    }
+]

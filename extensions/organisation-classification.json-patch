@@ -1,0 +1,15 @@
+[
+    {
+        "op": "add",
+        "path": "/definitions/Organization/properties/classifications",
+        "value": { 
+            "title": "Organization classifications",
+            "tedMapping":"CA_TYPE,CA_ACTIVITY",
+            "description": "Organizations can be classified by a range of different dimensions, including their type and scale. See documentation for a range of recognised classification schemes.",
+            "type": ["array"],
+            "items": {
+                "$ref": "#/definitions/Classification" 
+            }
+        }
+    }
+]
